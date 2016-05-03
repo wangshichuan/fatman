@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="Before" extends="struts-default">
+		<action name="login" class="Action.LoginAction">
+			<result name="success">/Before/index.jsp</result>
+			<result name="fail">/Before/login.html</result>
+			<result name="order">/Before/order.jsp</result>
+		</action>
+		
+		<action name="zhuce" class="Action.ZhuceAction">
+			<result name="success">/Before/login.html</result>
+			<result name="fail">/Before/zhuce.html</result>
+		</action>
+		
+		<action name="menutype" class="Action.MenuTypeAction">
+			<result name="success">/Before/typeDetail.jsp</result>
+			<result name="fail">/Before/index.jsp</result>
+		</action>
+		
+		<action name="joinorder" class="Action.JoinOrdercarAction" method="execute">
+			<result name="success">/Before/order.jsp</result>
+			<result name="fail">/Before/error.jsp</result>
+			<result name="login">/Before/login.html</result>
+		</action>
+		<action name="deleteMenu" class="Action.DeleteMenuAction">
+			<result name="success" type="redirectAction">menutype</result>
+			<result name="fail">/Before/error.jsp</result>
+		</action>
+		
+		
+		<action name="exit" class="Action.ExitLoginAction" method="execute">
+			<result name="success">/Before/login.html</result>
+			<result name="fail">/Before/error.jsp</result>
+		</action>
+		<action name="updateuser" class="Action.UpdateUserAction" method="execute">
+			<result name="success"  type="redirectAction">
+				<param name="actionName">peoplecenter</param>
+			</result>
+			<result name="fail">/Before/error.jsp</result>
+		</action>
+		
+		<action name="userinfo" class="Action.UserinfoAction" method="execute">
+			<result name="success">/Before/success.jsp</result>
+			<result name="fail">/Before/success.jsp</result>
+		</action>
+		
+		<action name="peoplecenter" class="Action.PeopleCenterAction" method="execute">
+			<result name="success">/Before/PeopleCenter.jsp</result>
+			<result name="fail">/Before/PeopleCenter.jsp</result>
+		</action>
+		
+		<action name="search" class="Action.SearchAction" method="execute">
+			<result name="success">/Before/typeDetail.jsp</result>
+			<result name="fail" type="redirectAction">menutype</result>
+		</action>
+		
+		<action name="orderinfo" class="Action.OrderInfoAction" method="execute">
+			<result name="success">/Before/userinfo.jsp</result>
+		</action>
+		
+		<action name="lookOrder" class="Action.LookOrderAction" method="execute">
+			<result name="success">/Before/lookOrder.jsp</result>
+			<result name="fail">/Before/lookOrder.jsp</result>
+		</action>
+		<action name="deleteorderpeople" class="Action.DeleteOrderAction">
+			<result name="success"  type="redirectAction">peoplecenter</result>
+			<result name="fail" type="redirectAction">peoplecenter</result>
+		</action>
+		
+		<action name="cancelorder" class="Action.CancelOrderAction">
+			<result name="success"  type="redirectAction">peoplecenter</result>
+			<result name="fail" type="redirectAction">peoplecenter</result>
+		</action>
+	</package>
+	
+	
+	<package name="Back" extends="struts-default">
+		<action name="loginBackAction" class="BackAction.BackLoginAction">
+			<result name="success">/Back/main.jsp</result>
+			<result name="fail">/Back/loginBack.html</result>
+		</action>
+		<action name="exitlogin" class="BackAction.ExitLoginAction">
+			<result name="success">/Back/loginBack.html</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+		<action name="orderall" class="BackAction.OrderAllAction">
+			<result name="success">/Back/index.jsp</result>
+		</action>
+		<action name="menuall" class="BackAction.MenuAllAction">
+			<result name="success">/Back/menu.jsp</result>
+		</action>
+		<action name="userall" class="BackAction.UserAllAction">
+			<result name="success">/Back/user.jsp</result>
+		</action>
+		<action name="orderdetail" class="BackAction.OrderDetailAction">
+			<result name="success">/Back/orderDetail.jsp</result>
+		</action>
+		<action name="deleteorder" class="BackAction.DeleteOrderAction">
+			<result name="success" type="redirectAction">orderall</result>
+		</action>
+		<action name="updateorder" class="BackAction.UpdateOrderAction">
+			<result name="success">/Back/updateOrder.jsp</result>
+		</action>
+		<action name="updateOrderSuccess" class="BackAction.UpdateOrderSuccessAction">
+			<result name="success" type="redirectAction">orderall</result>
+		</action>
+		<action name="updatemenu" class="BackAction.UpdateMenuAction">
+			<result name="success">/Back/UpdateMenu.jsp</result>
+		</action>
+		<action name="updateMenuSuccess" class="BackAction.UpdateMenuSuccessAction">
+			<result name="success" type="redirectAction">menuall</result>
+			<result name="input">/Back/UpdateMenu.jsp</result>
+		</action>
+		<action name="deletemenu" class="BackAction.DeleteMenuAction">
+			<result name="success" type="redirectAction">menuall</result>
+		</action>
+		<action name="addMenu" class="BackAction.AddMenuAction">
+			<result name="success" type="redirectAction">menuall</result>
+		</action>
+		<action name="addAdmin" class="BackAction.AddAdminAction">
+			<result name="fail">/Back/addAdmin.jsp</result>
+			<result name="success" type="redirectAction">adminall</result>
+		</action>
+		<action name="adminall" class="BackAction.AdminAllAction">
+			<result name="success">/Back/admin.jsp</result>
+		</action>
+		<action name="updateadmin" class="BackAction.UpdateAdminAction">
+			<result name="success">/Back/updateAdmin.jsp</result>
+		</action>
+		<action name="updateAdminsuccess" class="BackAction.UpdateAdminSuccessAction">
+			<result name="success" type="redirectAction">adminall</result>
+		</action>
+		<action name="deleteadmin" class="BackAction.DeleteAdminAction">
+			<result name="success" type="redirectAction">adminall</result>
+		</action>
+		<action name="deluser" class="BackAction.DelUserAction">
+			<result name="success" type="redirectAction">userall</result>
+		</action>
+		<action name="searchorder" class="BackAction.SearchOrderAction">
+			<result name="success">/Back/index.jsp</result>
+			<result name="fail" type="redirectAction">orderall</result>
+		</action>
+		<action name="searchmenu" class="BackAction.SearchMenuAction">
+			<result name="success">/Back/menu.jsp</result>
+			<result name="fail" type="redirectAction">menuall</result>
+		</action>
+		<action name="searchuser" class="BackAction.SearchUserAction">
+			<result name="success">/Back/user.jsp</result>
+			<result name="fail" type="redirectAction">userall</result>
+		</action>
+		<action name="moneyday" class="BackAction.MoneyDayAction">
+			<result name="success">/Back/MoneyDay.jsp</result>
+		</action>
+		<action name="moneymonth" class="BackAction.MoneyMonthAction">
+			<result name="success">/Back/MoneyMonth.jsp</result>
+		</action>
+		<action name="moneyyear" class="BackAction.MoneyYearAction">
+			<result name="success">/Back/MoneyYear.jsp</result>
+		</action>
+		<action name="searchtimes" class="BackAction.SearchTimeAction">
+			<result name="year">/Back/MoneyYear.jsp</result>
+			<result name="month">/Back/MoneyMonth.jsp</result>
+			<result name="day">/Back/MoneyDay.jsp</result>
+		</action>
+		
+	</package>
+	
+	
+	
+
+</struts>    

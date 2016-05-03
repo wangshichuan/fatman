@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/bootstrapPeople.min.css">
+<link rel="stylesheet" href="css/iindex.css">
+	<script src="js/jqueryPeople.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+   
+<!--年月日下拉列表-->
+<style>
+         #sYear{width:100px;}
+         #sMonth{width:100px;}
+         #sDate{width:100px;}
+     </style>
+  <script>
+      function fillSelect() 
+      {
+          var ddlYear = document.getElementById("sYear");
+          var ddlMonth = document.getElementById("sMonth");
+          var ddlDate = document.getElementById("sDate");
+          var opt = null;
+       var curDay = new Date();
+       var year = curDay.getFullYear();
+       for (var i = -35; i < 1; i++) 
+       {
+           opt = document.createElement("OPTION");
+           opt.value = year + i;
+           opt.innerText = (year + i) + "年";
+           ddlYear.appendChild(opt);
+       }
+       ddlYear.value = curDay.getFullYear();
+       
+       for (var i = 1; i <= 12; i++) 
+       {
+           opt = document.createElement("OPTION");
+           opt.value = i;
+           opt.innerText = i + "月";
+           ddlMonth.appendChild(opt);
+       }
+       ddlMonth.value = curDay.getMonth() + 1;
+
+       fillDate();
+       ddlDate.value = curDay.getDate();
+   }
+   function fillDate() 
+   {
+       var ddlYear = document.getElementById("sYear");
+       var ddlMonth = document.getElementById("sMonth");
+       var ddlDate = document.getElementById("sDate");
+       while (ddlDate.options.length > 0)
+       {
+           ddlDate.remove(0);
+       }
+       var selDay = new Date();
+       selDay.setFullYear(ddlYear.value, ddlMonth.value, 1);
+       var lastDay = new Date(selDay - (24 * 60 * 60 * 1000));
+
+       var days = lastDay.getDate();
+       for (var i = 1; i <= days; i++) 
+       {
+           var opt = document.createElement("OPTION");
+           opt.value = i;
+           opt.innerText = i + "日";
+           ddlDate.appendChild(opt);
+       }
+   }
+  </script>
+<!--年月日下拉列表-->
+
+<!--图片上传预览-->
+<style type="text/css">
+#preview{width:260px;height:190px;border:1px solid #000;overflow:hidden;}
+#imghead {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}
+</style>
+<script type="text/javascript">
+
+
+      //图片上传预览    IE是用了滤镜。
+        function previewImage(file)
+        {
+          var MAXWIDTH  = 260; 
+          var MAXHEIGHT = 180;
+          var div = document.getElementById('preview');
+          if (file.files && file.files[0])
+          {
+              div.innerHTML ='<img id=imghead>';
+              var img = document.getElementById('imghead');
+              img.onload = function(){
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                img.width  =  rect.width;
+                img.height =  rect.height;
+//                 img.style.marginLeft = rect.left+'px';
+                img.style.marginTop = rect.top+'px';
+              }
+              var reader = new FileReader();
+              reader.onload = function(evt){img.src = evt.target.result;}
+              reader.readAsDataURL(file.files[0]);
+          }
+          else //兼容IE
+          {
+            var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+            file.select();
+            var src = document.selection.createRange().text;
+            div.innerHTML = '<img id=imghead>';
+            var img = document.getElementById('imghead');
+            img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+            var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+            status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+            div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+          }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            var param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+                
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+</script>   
+<!--图片上传预览-->
+<!--2级城市下拉菜单-->
+<style>
+    #city select{
+        width:80px;
+    }
+  </style>
+  
+  <script src="js/jquery.provincesCity.js" type="text/javascript"></script>
+  <script src="js/provincesdata.js" type="text/javascript"></script>
+  <script>
+    //调用插件
+    $(function(){
+        $("#city").ProvinceCity();
+    });
+  </script>
+<!--2级城市下拉菜单-->
+
+</head>
+
+<body onload="fillSelect()">
+<div style="margin-top:55px ;background-color:#CCC; height:1200px">
+<div class="contnt_2">
+  <div class="contnt_left_3" >
+  
+        <!--名片段-->
+    	<div style="float:left; width:1200px; height:250px; background-color:#FFF">
+        <div style="float:left">
+        	&nbsp;&nbsp;<img alt="140x140"   src="img/touxiang.jpg" class="img-rounded" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <div style="float:left; color:#039">
+        	<p><DIV id=time style="color:#0CC; float:left">当前时间  
+				<SCRIPT>
+				document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());
+				setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+                </SCRIPT>  
+				</DIV>
+                <div style="float:right; text-align:right; width:800px">
+                <a href="#"><button class="btn">个人首页</button></a>
+                <a href="#"><button class="btn">创客首页</button></a>
+                <a href="#"><button class="btn">好友动态</button></a>
+                </div>
+                <h5>最新动态:</h5>
+                <h6 style="color:#3FC">此处添加动态时间....</h6>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天心情不错！ 
+            </p>
+        </div>
+    	  <div style="float:left; height:110px"><h3>&nbsp;&nbsp;&nbsp;呆熊笨猪</h3>
+        <p style="width:1200px; color:#3CF">
+        	<table border="0" style="margin-left:20px;">
+        	  <tr>
+        	    <td height="42" align="center"><a href="#">10086<br />
+        	      粉丝</a></td>
+        	    <td align="center">&nbsp;&nbsp;|&nbsp;&nbsp;<br />
+       	        &nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        	    <td align="center"><a href="#">10086<br />
+        	      关注</a></td>
+      	    </tr>
+      	  </table>
+        	</p>
+        </div>
+        <div style="float:right; margin-top:-50px; margin-right:20px">
+        <b>权限设置:</b>
+        <select style="width:120px; margin-top:10px;">  
+  			<option value ="1">所有人可见</option>  
+  			<option value ="2">好友可见</option>   
+		</select> 
+        </div>
+        </div>
+        <!--名片段-->
+        
+        
+			<div class="tabbable" style="width:1200px" id="tabs-341970">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#one" data-toggle="tab">基本信息</a>
+					</li>
+					<li>
+						<a href="#two" data-toggle="tab">修改密码</a>
+					</li>
+					<li>
+						<a href="#three" data-toggle="tab">安全设置</a>
+					</li>
+				</ul>
+				<div style="background-color:#FFF" class="tab-content">
+					<div class="tab-pane active" id="one" >
+						<form class="form-horizontal" >
+    <fieldset>
+    <div id="legend" class="">
+        <legend class="">&nbsp;&nbsp;个人设置</legend>
+      </div>
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">昵称</label>
+          <div class="controls">
+            <input type="text" placeholder="请输入您的昵称~" class="input-xlarge">
+          </div>
+        </div>
+<div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">账号</label>
+          <div class="controls">
+            <p type="text"  style="width:200px"  >此处显示邮箱</p>
+            
+          </div>
+        </div>
+    
+
+    <div class="control-group">
+          <label class="control-label">性别</label>
+          <div class="controls">
+
+            <!-- Inline Radios -->
+            <label class="radio inline">
+              <input type="radio" value="boy" checked="checked" name="group">
+              男
+            </label>
+            <label class="radio inline">
+              <input type="radio" value="girl" name="group">
+              女
+            </label>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Select Basic -->
+          <label class="control-label">生日</label>
+          <div class="controls">
+           <select id="sYear" onchange="fillDate()"></select>
+  <select id="sMonth" onchange="fillDate()"></select>
+  <select id="sDate"></select>
+          </div>
+        </div>
+        
+    <div class="control-group">
+    	<label class="control-label">所在地</label>
+        <div id="city" class="controls">
+        </div>
+    </div>
+        
+        
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">院校</label>
+          <div class="controls">
+            <input type="text" placeholder="大神来自哪里~"  class="input-xlarge">
+          </div>
+        </div>
+        
+        
+        <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">职业</label>
+          <div class="controls" style="float:left; margin-left:20px">
+            <input type="text" class="input-medium">
+          </div>
+          <label class="control-label" style="width:60px" for="input01">星座</label>
+          <div class="controls" style="float:left; margin-left:10px">
+            <select class="input-medium">
+      <option>水瓶座</option>
+      <option>双鱼座</option>
+      <option>白羊座</option>
+      <option>金牛座</option>
+      <option>双子座</option>
+      <option>巨蟹座</option>
+      <option>狮子座</option>
+      <option>处女座</option>
+      <option>天秤座</option>
+      <option>天蝎座</option>
+      <option>射手座</option>
+      <option>摩羯座</option></select>
+          </div>
+        </div>
+        
+        
+        <div class="control-group">
+
+          <!-- Textarea -->
+          <label class="control-label">个人说明</label>
+          <div class="controls">
+            <div class="textarea">
+                  <textarea type="" placeholder="个性说明~" class="input-xlarge"> </textarea>
+            </div>
+          </div>
+        </div>
+        <div class="control-group">
+        <!--图片上传-->
+        <label class="control-label">头像设置</label>
+          <div class="controls">
+        <div id="preview">
+    	<img id="imghead" border=0 src="img/head_180.jpg" width="180" height="180" />
+		</div>
+		<input type="file" onchange="previewImage(this)" />
+        </div>
+        </div>
+        <div class="control-group">
+        	<div class="controls" >
+            <input type="submit" class="btn btn-success" value="  保 存  "></div></div>
+    </fieldset>
+  </form>
+					</div>
+					<div class="tab-pane" id="two">
+						
+  <form class="form-horizontal">
+    <fieldset>
+      <div id="legend" class="">
+        <legend class="">&nbsp;请保存好您的密码</legend>
+      </div>
+    
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">* 当前密码</label>
+          <div class="controls">
+            <input type="text" placeholder="请输入旧密码" class="input-xlarge">
+           <a href="#"> <p style="color:#066; font-size:10px; text-decoration:underline">忘记当前密码？</p></a>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">* 新密码</label>
+          <div class="controls">
+            <input type="text" placeholder="请输入新密码" class="input-xlarge">
+            <p style="color:#066; font-size:10px;">密码由6-16个字符组成，区分大小写(不能是9位以下的纯数字，不能包含空格)</p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">* 确认新密码</label>
+          <div class="controls">
+            <input type="text" placeholder="请保存好您的密码" class="input-xlarge">
+            <p style="color:#066; font-size:10px;">为了提升您的密码安全性，建议使用英文字母加数字或符号的混合密码</p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">* 验证码</label>
+          <div class="controls">
+            <input type="text"  class="input-medium">
+            <p class="help-block">此处生成验证码</p>
+          </div>
+        </div>
+
+    <div class="control-group">
+          <!-- Button -->
+          <div class="controls">
+            <input type="submit" class="btn btn-success" value="  确 定  ">
+          </div>
+        </div>
+
+<br><br>
+		<div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01"><h4><em>常见问题</em></h4></label>
+          <div class="controls">
+            <ul>
+            	<li><h6>为什么有时候改密只需验证原密码，而不需要验证密保或进行帐号申诉？</h6>
+在网络环境十分安全的情况下，为方便您快速操作，您可以通过原密码改密。 
+在网络环境异常情况下，必须验证密保或进行帐号申诉，以确保只有您本人才能改密。</li>
+				<li><h6>为什么新密码不要与曾用过的密码相同？</h6>
+                QQ反复被盗通常是因为新密码与曾用过的密码相同。盗号者可能通过木马、钓鱼等方式获取用户曾用过的密码， 如果新密码与曾用过的密码相同，将会使QQ面临巨大的被盗风险。为了您的QQ安全，请设置一个全新的密码。</li>
+                </ul>
+          </div>
+        </div>
+    </fieldset>
+  </form>
+
+					</div>
+					<div class="tab-pane" id="three">
+						  <form class="form-horizontal">
+    <fieldset>
+      <div id="legend" class="">
+        <legend class="">&nbsp;&nbsp;这里填写帮助找回密码的信息</legend>
+      </div>
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">安全问题1</label>
+          <div class="controls">
+            <input type="text" placeholder="请设置您的安全问题1~" class="input-xlarge">
+            <p class="help-block" style="">设置安全问题能方便找回密码</p>
+          </div>
+        </div>
+
+    
+
+    
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">答案</label>
+          <div class="controls">
+            <input type="text" placeholder="请填入安全问题1的答案" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">安全问题2</label>
+          <div class="controls">
+            <input type="text" placeholder="请设置您的安全问题2~" class="input-xlarge">
+            <p class="help-block">请务必记住您的安全问题</p>
+          </div>
+        </div><div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">答案</label>
+          <div class="controls">
+            <input type="text" placeholder="请填入安全问题2的答案" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    
+
+    <div class="control-group">
+          <label class="control-label"></label>
+
+          <!-- Button -->
+          <div class="controls">
+            <button class="btn btn-success">  保 存  </button>
+          </div>
+        </div>
+
+    </fieldset>
+  </form>
+					</div>
+	</div>
+</div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

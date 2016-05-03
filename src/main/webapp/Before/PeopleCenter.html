@@ -1,0 +1,1790 @@
+<!--<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 4.01 Transitional//EN" "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+	<link rel="stylesheet" href="css/bootstrapPeople.min.css">
+<link rel="stylesheet" href="css/iindex.css">
+<link rel="stylesheet" href="css/header.css">
+	<script src="js/jqueryPeople.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+    <!--横向下拉菜单-->
+    <style type="text/css">
+*{
+	list-style-type: none;
+}
+a,img{border:0;}
+body{
+	font: 9px/180% Arial, Helvetica, sans-serif, "新宋体";
+}
+/* menu */
+.ziti{
+	font-size: 14px;
+	}
+.menu{
+	width: 1200px;
+	height: 40px;
+	margin: 0px 0px;
+	padding-left: 0px;
+}
+.menu ul{padding:0 0 0 0px;}
+.menu li{float:left;font-size:12px;  padding:0px;}
+.menu li a{text-decoration:none;color:#000;display:block;padding:0 20px;font:16px/44px "微软雅黑";}
+.menu li a:hover{
+	text-decoration: none;
+	color: #00F;
+	font: 16px/44px "微软雅黑";
+}
+.menu li ul{visibility:hidden;position:absolute;}
+.menu li.hover ul{/*ie6不支持li:hover所以在这里写成li.hover以方便js取样式*/visibility:visible;position:absolute;display:block;width:445px;padding:0 0 0 0px;}
+.menu li.hover .h-links{color:#ff6600;}
+.menu ul ul li a{padding:0 1em;line-height:20px;}
+.menu ul ul li a:hover{padding:0 1em;line-height:20px;}
+
+    </style>
+
+<!--横向下拉菜单-->
+    
+
+</head>
+<body>
+<div style="background-color:#CFF;height:1400px; margin-top:55px; ">
+<div class="contnt_2">
+  
+       
+    	<div style="width:1000px;margin-left:70px; height:250px; background-image:url(img/mpbg.jpg)">
+         <!--名片段-->
+        <div style="float:left; margin-top:10px;">
+        	&nbsp;&nbsp;<a href="#p1" data-toggle="tab" class="active"><img alt="140x140" src="img/touxiang.jpg" class="img-rounded" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+    	  <div style=" margin-left:16px"><h3><a href="#p1" data-toggle="tab" class="active">呆熊笨猪</a></h3> </div>
+        </div>
+        <div style="float:left; color:#039">
+        	<p><DIV id=time style="color:#0CC; float:left">当前时间  
+				<SCRIPT>
+				document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());
+				setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+                </SCRIPT>  
+				</DIV>
+                
+		<script language="javascript" type="text/javascript">
+		function showSubLevel(Obj){
+			Obj.className="hover";
+		}
+		function hideSubLevel(Obj){
+			Obj.className="";
+		}
+		</script>
+        <script type="text/javascript">
+			$(document).ready(function(){
+  			$(".sortname").click(function(){
+   			if($(this).find(".sort_input").attr("type") == "text"){return false;}
+  				 var name = $.trim($(this).html());
+  				 var m = $.trim($(this).text());
+				 $(this).html("<input  value=\""+name+"\" class=\"sort_input\">");
+   				$(this).find(".sort_input").focus();
+  				 $(this).find(".sort_input").bind("blur", function(){
+ 				 var n = $.trim($(this).val());
+  			if(n != m && n != ""){ // www.jbxue.com
+    			//window.location = "sort.php?val="+encodeURIComponent(n);
+   				 //发送信息
+   				 $(this).parent().html(n);
+  					}else{
+    			$(this).parent().html(name);
+  				}
+   				});
+  			});
+			});
+		</script>
+                <div style="float:right; text-align:right; width:650px">
+                <a href="#"><button class="btn">个人设置</button></a>
+                <a href="#"><button class="btn">创客首页</button></a>
+                </div>
+                <h5>最新动态:</h5>
+                <h6 style="color:#3FC">此处添加动态时间....</h6>
+                <div class="sortname">百度</div>
+            </p>
+        </div>
+        
+        <!--名片段-->
+        <div style="float:left; margin-top:-20px;width:1000px">
+        <div class="menu" style="padding-left:0px; width:1000px">
+            <p style="color:#3CF">
+						
+                        <table border="0" style="margin-left:20px;">
+        	  <tr>
+        	    <td height="42" align="center"><a href="#p2" data-toggle="tab">10086<br />
+        	      粉丝</a></td>
+        	    <td align="center">&nbsp;&nbsp;|&nbsp;&nbsp;<br />
+       	        &nbsp;&nbsp;|&nbsp;&nbsp;</td>
+        	    <td align="center"><a href="#p3" data-toggle="tab">10086<br />
+        	      关注</a></td>
+      	    </tr>
+      	  </table>
+            </p>
+        	
+        <!--横向下拉菜单-->
+        
+        <div  style="width:1000px;" class="tab-content">
+        	<!--<div class="tabbable" id="p1">-->
+      <div class="tab-pane active" style="" id="p1" >
+				<div  style="padding-left:0px;width:1000px; background-color:#FFF">
+                <ul class="nav nav-tabs" style=" border-bottom:0px solid #FFF;">
+					<li class="active" onmouseover="showSubLevel(this)" onmouseout="hideSubLevel(this)">
+						<a href="#one" data-toggle="tab">动态(10)</a>
+                        <ul  style="border-bottom:0px; margin-left:0px; ">
+							<li><a href="#"><p class="ziti">我的动态(+5)</p></a></li>
+							<li><a href="#"><p class="ziti">好友动态(+2)</p></a></li>
+						</ul>
+					</li>
+					<li onmouseover="showSubLevel(this)" onmouseout="hideSubLevel(this)">
+						<a href="#two" data-toggle="tab">消息(2)</a>
+                        <ul  style="border-bottom:0px; margin-left:0px; ">
+							<li><a href="#panel-326554" data-toggle="tab"><p class="ziti">私信(+5)</p></a></li>
+							<li><a href="#panel-319429" data-toggle="tab"><p class="ziti">被回复(+2)</p></a></li>
+							<li><a href="#panel-3" data-toggle="tab"><p class="ziti">被关注(+2)</p></a></li>
+							<li><a href="#panel-4" data-toggle="tab"><p class="ziti">系统消息(+1)</p></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#three" data-toggle="tab">喜欢(24)</a>
+					</li>
+					<li >
+						<a href="#four" data-toggle="tab">收藏(12)</a>
+					</li>
+					<li>
+						<a href="#five" data-toggle="tab">我的分享(12)</a>
+					</li>
+					<li>
+						<a href="#six" data-toggle="tab">我的教程(12)</a>
+					</li>
+				</ul>
+              </div>
+			  <div style="background-color:#FFF; width:1000px; margin-top:30px;" class="tab-content">
+				  <div class="tab-pane active" id="one" style="margin-left:50px" >
+                     <!--动态-->
+                     <div style="border-top:1px dashed #cccccc;height: 1px; margin-left:35px;width:910px;overflow:hidden"></div>
+                     <!--动态单条-->
+           			<div style="width:800px; height:65px;float:left;margin-left:32px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="49" height="49">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:15px; font-size:16px">
+            				<div style="float:left"><b>呆熊笨猪</b></div>
+                            <div style="float:left; margin-left:600px; margin-top:5px; font-size:12px; color:#F6C">一分钟前</div>
+                			<br>
+               				<div style="float:left; font-size:14px ">刚看到一款眼镜不错，推荐给大家~~链接 地址是http://www.baidu.com款眼镜不错</div>
+            			</div>
+           			 </div>
+                     <div style="margin-left:100px;">
+                     	<div style="float:left; height:120px">
+                        	<img src="img/touxiang.jpg"  width="100" height="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="img/touxiang.jpg"  width="100" height="100">
+                        </div>
+                     </div>
+                     <div style="border-top:1px dashed #cccccc;height: 1px; margin-left:35px;width:910px;overflow:hidden"></div>
+            		 <!--动态单条-->
+                     <!--动态单条-->
+           			<div style="width:800px; height:65px;float:left;margin-left:32px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="49" height="49">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:15px; font-size:16px">
+            				<div style="float:left"><b>呆熊笨猪</b></div>
+                            <div style="float:left; margin-left:600px; margin-top:5px; font-size:12px; color:#F6C">一分钟前</div>
+                			<br>
+               				<div style="float:left; font-size:14px ">刚看到一款眼镜不错，推荐给大家~~链接 地址是http://www.baidu.com款眼镜不错</div>
+            			</div>
+           			 </div>
+                     <div style="margin-left:100px;">
+                     	<div style="float:left; height:120px">
+                        	<img src="img/touxiang.jpg"  width="100" height="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="img/touxiang.jpg"  width="100" height="100">
+                        </div>
+                     </div>
+                     <div style="border-top:1px dashed #cccccc;height: 1px; margin-left:35px;width:910px;overflow:hidden"></div>
+            		 <!--动态单条-->
+                     <!--动态单条-->
+           			<div style="width:800px; height:65px;float:left;margin-left:32px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="49" height="49">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:15px; font-size:16px">
+            				<div style="float:left"><b>呆熊笨猪</b></div>
+                            <div style="float:left; margin-left:600px; margin-top:5px; font-size:12px; color:#F6C">一分钟前</div>
+                			<br>
+               				<div style="float:left; font-size:14px ">刚看到一款眼镜不错，推荐给大家~~链接 地址是http://www.baidu.com款眼镜不错</div>
+            			</div>
+           			 </div>
+                     <div style="margin-left:100px;">
+                     	<div style="float:left; height:120px">
+                        	<img src="img/touxiang.jpg"  width="100" height="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="img/touxiang.jpg"  width="100" height="100">
+                        </div>
+                     </div>
+                     <div style="border-top:1px dashed #cccccc;height: 1px; margin-left:35px;width:910px;overflow:hidden"></div>
+            		 <!--动态单条-->
+                     <!--动态单条-->
+           			<div style="width:800px; height:65px;float:left;margin-left:32px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="49" height="49">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:15px; font-size:16px">
+            				<div style="float:left"><b>呆熊笨猪</b></div>
+                            <div style="float:left; margin-left:600px; margin-top:5px; font-size:12px; color:#F6C">一分钟前</div>
+                			<br>
+               				<div style="float:left; font-size:14px ">刚看到一款眼镜不错，推荐给大家~~链接 地址是http://www.baidu.com款眼镜不错</div>
+            			</div>
+           			 </div>
+                     <div style="margin-left:100px;">
+                     	<div style="float:left; height:120px">
+                        	<img src="img/touxiang.jpg"  width="100" height="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="img/touxiang.jpg"  width="100" height="100">
+                        </div>
+                     </div>
+                     <div style="border-top:1px dashed #cccccc;height: 1px; margin-left:35px;width:910px;overflow:hidden"></div>
+            		 <!--动态单条-->
+                     <!--动态单条-->
+           			<div style="width:800px; height:65px;float:left;margin-left:32px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="49" height="49">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:15px; font-size:16px">
+            				<div style="float:left"><b>呆熊笨猪</b></div>
+                            <div style="float:left; margin-left:600px; margin-top:5px; font-size:12px; color:#F6C">一分钟前</div>
+                			<br>
+               				<div style="float:left; font-size:14px ">刚看到一款眼镜不错，推荐给大家~~链接 地址是http://www.baidu.com款眼镜不错</div>
+            			</div>
+           			 </div>
+                     <div style="margin-left:100px;">
+                     	<div style="float:left; height:120px">
+                        	<img src="img/touxiang.jpg"  width="100" height="100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <img src="img/touxiang.jpg"  width="100" height="100">
+                        </div>
+                     </div>
+                     <div style="border-top:1px dashed #cccccc;height: 1px; margin-left:35px;width:910px;overflow:hidden"></div>
+            		 <!--动态单条-->
+                     <div style="width:600px; height:85px;float:left;margin-top:15px;margin-left:200px;">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                     <!--动态结束-->
+                    </div>
+					<div class="tab-pane" id="two" >
+                    	<!--消息中心-->
+                        <div style="float:left">
+                        	<div class="tabbable tabs-left" id="tabs-753751">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-326554" data-toggle="tab">私信</a>
+					</li>
+					<li>
+						<a href="#panel-319429" data-toggle="tab">被回复</a>
+					</li>
+					<li>
+						<a href="#panel-3" data-toggle="tab">被关注</a>
+					</li>
+					<li>
+						<a href="#panel-4" data-toggle="tab">系统消息</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-326554">
+                        <!--私信单条-->
+                        <div style="width:800px; height:800px;float:left;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="the1">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle collapsed" data-toggle="collapse" data-
+
+parent="#the1" href="#chakan"><b>查看</b></a>
+					</div>
+                            <div  id="chakan" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p><br>
+                                <button style=" font-size:12px">回复</button>
+                                </div>
+                            </div>
+                            
+           				</div>
+                        <!--私信单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:505px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                         <div class="accordion" id="the2">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#the2" href="#chakan2"><b>查看</b></a>
+					</div>
+                            <div  id="chakan2" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="the3">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#the3" href="#chakan3"><b>查看</b></a>
+					</div>
+                            <div  id="chakan3" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                         <div class="accordion" id="the4">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#the4" href="#chakan4"><b>查看</b></a>
+					</div>
+                            <div  id="chakan4" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="the5">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#the5"  href="#chakan5"><b>查看</b></a>
+					</div>
+                            <div  id="chakan5" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        
+                        <div style="margin-left:150px">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+                        
+                        
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+					</div>
+					<div class="tab-pane" id="panel-319429">
+						<!--私信单条-->
+                        <div style="width:800px; height:800px;float:left;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="bhthe1">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle collapsed" data-toggle="collapse" data-
+
+parent="#bhthe1" href="#bh"><b>查看</b></a>
+					</div>
+                            <div  id="bh" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p><br>
+                                <button style=" font-size:12px">回复</button>
+                                </div>
+                            </div>
+                            
+           				</div>
+                        <!--私信单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:505px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                         <div class="accordion" id="bhthe2">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#bhthe2" href="#bh2"><b>查看</b></a>
+					</div>
+                            <div  id="bh2" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="bhthe3">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#bhthe3" href="#bh3"><b>查看</b></a>
+					</div>
+                            <div  id="bh3" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                         <div class="accordion" id="bhthe4">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#bhthe4" href="#bh4"><b>查看</b></a>
+					</div>
+                            <div  id="bh4" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="bhthe5">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#bhthe5"  href="#bh5"><b>查看</b></a>
+					</div>
+                            <div  id="bh5" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        
+                        <div style="margin-left:150px">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+                        
+                        
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+					</div>
+                    
+					<div class="tab-pane" id="panel-3">
+						<!--私信单条-->
+                        <div style="width:800px; height:800px;float:left;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="bgthe1">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle collapsed" data-toggle="collapse" data-
+
+parent="#bgthe1" href="#bg"><b>查看</b></a>
+					</div>
+                            <div  id="bg" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p><br>
+                                <button style=" font-size:12px">回复</button>
+                                </div>
+                            </div>
+                            
+           				</div>
+                        <!--私信单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:505px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                         <div class="accordion" id="bgthe2">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#bgthe2" href="#bg2"><b>查看</b></a>
+					</div>
+                            <div  id="bg2" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="bgthe3">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#bgthe3" href="#bg3"><b>查看</b></a>
+					</div>
+                            <div  id="bg3" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                         <div class="accordion" id="bgthe4">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#bgthe4" href="#bg4"><b>查看</b></a>
+					</div>
+                            <div  id="bg4" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="bgthe5">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#bgthe5"  href="#bg5"><b>查看</b></a>
+					</div>
+                            <div  id="bg5" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        
+                        <div style="margin-left:150px">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+                        
+                        
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+					</div>
+                    
+					<div class="tab-pane" id="panel-4">
+						<!--私信单条-->
+                        <div style="width:800px; height:800px;float:left;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="systhe1">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle collapsed" data-toggle="collapse" data-
+
+parent="#systhe1" href="#sys"><b>查看</b></a>
+					</div>
+                            <div  id="sys" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p><br>
+                                <button style=" font-size:12px">回复</button>
+                                </div>
+                            </div>
+                            
+           				</div>
+                        <!--私信单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:505px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                         <div class="accordion" id="systhe2">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#systhe2" href="#sys2"><b>查看</b></a>
+					</div>
+                            <div  id="sys2" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="systhe3">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#systhe3" href="#sys3"><b>查看</b></a>
+					</div>
+                            <div  id="sys3" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                         <div class="accordion" id="systhe4">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#systhe4" href="#sys4"><b>查看</b></a>
+					</div>
+                            <div  id="sys4" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        <!--消息单条-->
+                        <div style="width:800px; height:85px;float:left; margin-top:-20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/mail.png"  width="40" height="30">
+           				</div>
+            			<div style="float:left; margin-top:10px;margin-left:15px; font-size:16px">
+            				<div style="float:left;"><b>领奖通知</b></div>
+                            <div style="float:left; margin-left:580px;font-size:12px; color:#F6C">2014-8-18</div>
+                			<br>
+               				<div style="float:left;font-size:12px; color:#F6C">发件人：中国福彩中心</div>
+                            <div style="float:left; margin-left:560px; font-size:13px"><a href="#"><b>删除</b></a></div>
+            			</div>
+                        <div class="accordion" id="systhe5">
+                        <div class="accordion-heading">
+						 <a style="width:30px; margin-top:10px" class="accordion-toggle" data-toggle="collapse" data-
+
+parent="#systhe5"  href="#sys5"><b>查看</b></a>
+					</div>
+                            <div  id="sys5" class="accordion-body collapse" style="margin-top:2px; margin-left:5px">
+                            	<div class="accordion-inner">
+                                <p>弹出消息内容</p>
+                                </div>
+                            </div>
+           				</div>
+                        <!--消息单条-->
+                        
+                        <div style="margin-left:150px">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+                        
+                        
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+					</div>
+				</div>
+			</div>	
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!--消息中心-->
+                    </div>
+					<div class="tab-pane " id="three" >
+                    	<!--板块3-->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;margin-top:15px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;margin-top:15px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;margin-top:15px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;margin-top:15px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                         <div style="margin-left:240px;">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+                        
+       					<!--板块3结束-->
+                    </div>
+					<div class="tab-pane " id="four" >
+                    	<!--板块4-->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div style="margin-left:30px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;margin-top:15px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div style="margin-left:30px;margin-top:15px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;margin-top:15px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;margin-top:15px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        
+                        <div style="margin-left:240px;">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+                        
+                        
+                        <!--板块4结束-->
+                    </div>
+					<div class="tab-pane " id="five" >
+                    	<!--板块5-->
+                       <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;margin-top:15px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;margin-top:15px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;margin-top:15px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                        <!-- 商品小图 -->
+    					<div class="goods-detail" style="margin-left:20px;margin-top:15px;float:left">
+        					<a href="#"><img src="img/goods1.jpg" /></a>
+        					<div class="introduce" style="margin-top:5px">
+            					<a href="#"><p>甜美碎花俩件套背心裙加罩衫</p></a>
+           					</div>
+                		</div>
+       					<!-- 商品小图 -->
+                         <div style="margin-left:240px;">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+                        
+                        <!--板块5结束-->
+                    </div>
+					<div class="tab-pane " id="six" >
+                    	<!--板块6-->
+                         <!-- 教程小图 -->
+    					<div  style="margin-left:30px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div style="margin-left:30px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;margin-top:15px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div style="margin-left:30px;margin-top:15px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;margin-top:15px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        <!-- 教程小图 -->
+    					<div  style="margin-left:30px;margin-top:15px;float:left">
+         					<div class="pic"> <a href="#"><img src="img/hot1.jpg" width="210" height="210" title="报纸球"/></a>
+            						<div class="name"> <strong>报纸球</strong></div>
+            						<div class="renqi">
+                                    	13人气&nbsp;/&nbsp;0收藏&nbsp;/&nbsp;0评论
+                                    </div>
+          					</div>
+        				</div>
+       					<!-- 教程小图 -->
+                        
+                        <div style="margin-left:240px;">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+                        
+                        <!--板块6结束-->
+                    </div>
+                </div>
+      </div>
+       <!--#p1结束-->
+    <div class="tab-pane" id="p2" style="height:800px; background-color:#FFF">
+           <!--粉丝板块-->
+           <hr color="#CCC" size="20" />
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:62px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:12px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:62px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:12px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:62px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:12px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:62px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:12px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+            
+             <div style="margin-left:240px;">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+            
+            
+            
+            <!--粉丝板块结束-->
+    </div>
+    <div class="tab-pane" id="p3" style="height:800px; background-color:#FFF">
+            <!--关注板块-->
+           <hr color="#CCC" size="20" />
+           
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:62px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:12px;">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:62px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:12px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:62px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:12px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:62px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+           <!--名片部分-->
+           <div style="border:1px solid #CCC; width:430px; height:90px;float:left;margin-left:12px; margin-top:20px">
+          				<div style="margin-left:5px; margin-top:5px; float:left">
+            				<img src="img/touxiang.jpg"  width="69" height="69">
+           				</div>
+            			<div style="float:left; margin-top:5px;margin-left:5px; font-size:16px; margin-left:20px">
+            				<div style="float:left; margin-top:5px"><b>呆熊笨猪</b></div>
+               				<div style="float:right; margin-top:5px"> <button class="btn btn-success" style="width:70px;height:20px;"><p style="font-size:12px; margin-top:-5px">+关注</p></button></div>
+                            <br>
+            			<div style="background-color:#fff;float:left; font-size:12px; margin-top:25px;">
+            				<a href="#">50喜欢</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">172动态</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">1教程</a>&nbsp;<b>/</b>&nbsp;
+            				<a href="#">3粉丝</a>
+            			</div>
+               				<div style="float:right;"> <button class="btn btn-success" style="width:70px;height:20px;margin-top:25px; margin-left:65px"><p style="font-size:12px; margin-top:-5px">发私信</p></button></div>
+            			</div>
+           	</div>
+            <!--名片部分-->
+            
+            
+             <div style="margin-left:240px;">
+				<ul>
+					<li>
+						<a href="#">上一页</a>
+					</li>
+					<li>
+						<a href="#">1</a>
+					</li>
+					<li>
+						<a href="#">2</a>
+					</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<a href="#">4</a>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li>
+						<a href="#">下一页</a>
+					</li>
+				</ul>
+			</div>
+                        
+            <!--关注板块结束-->
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    
+    
+                        
+</body>
+</html>
