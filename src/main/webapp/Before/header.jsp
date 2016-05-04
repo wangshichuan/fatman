@@ -57,7 +57,7 @@
                 </li>
             </ul>
         </li>
-        <li><a href="company.action"><i class="icon-magic"></i>企业资讯</a></li>
+        <li><a href="companyArticle.action"><i class="icon-magic"></i>企业资讯</a></li>
         <li><a href="company_honor.action"><i class="icon-quote-right"></i>企业荣耀</a></li>
         <li><a href="user_join.action"><i class="icon-envelope-alt"></i>员工招聘</a></li>
         <li><a href="company_join.action"><i class="icon-envelope-alt"></i>加盟连锁</a></li>

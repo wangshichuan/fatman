@@ -12,12 +12,13 @@
 </head>
 <body>
 <div style="padding-top: 12%">
-  <footer class="site-footer">
+
+  <footer class="site-footer" style="align-content: center">
     <div class="container">
 
       <div class="row">
         <div class="col-md-12 text-center">
-          <p class="copyright-text">订餐系统 &copy; 2015 我们只做最好</p>
+          <p class="copyright-text">莽子特色自助老火锅 &copy; 2015 我们只做最好</p>
         </div>
       </div>
     </div>
