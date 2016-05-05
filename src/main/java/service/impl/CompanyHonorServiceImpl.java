@@ -1,20 +1,22 @@
 package service.impl;
 
-import Dao.ArticleDao;
+import Dao.HonorDao;
 import Model.Article;
-import service.CompanyArticleService;
+import Model.Honor;
+import service.CompanyHonorService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by wangshichuan on 2016/5/4.
  */
-public class CompanyArticleServiceImpl implements CompanyArticleService {
-    ArticleDao articleDao = new ArticleDao();
+public class CompanyHonorServiceImpl implements CompanyHonorService{
+
+
+    HonorDao honorDao = new HonorDao();
 
     @Override
-    public List<Article> getListByPage(int page, int limit, String condition) {
+    public List<Honor> getListByPage(int page, int limit, String condition) {
 //        List<Article> articleList = new ArrayList<>();
 //        for (int i = 0; i < 5; i++) {
 //            Article article = new Article();
@@ -23,15 +25,15 @@ public class CompanyArticleServiceImpl implements CompanyArticleService {
 //            article.setDate("2015-04-" + i);
 //            articleList.add(article);
 //        }
-        return articleDao.getListByPage(page, limit, condition);
+        return honorDao.getListByPage(page, limit, condition);
     }
 
     @Override
-    public Article getArticleById(int id) {
+    public Honor getArticleById(int id) {
 //        Article article = new Article();
 //        article.setTitle("测试title");
 //        article.setContent("测试内容");
-        return articleDao.getArticleById(id);
+        return honorDao.getArticleById(id);
     }
 
     @Override
@@ -39,13 +41,13 @@ public class CompanyArticleServiceImpl implements CompanyArticleService {
         if (id == 0) {
             return;
         }
-        articleDao.delete(id);
+        honorDao.delete(id);
 
     }
 
     @Override
     public void add(String title, String content, String auth, String note) {
 
-        articleDao.add(title, content, auth, note);
+        honorDao.add(title, content, auth, note);
     }
 }

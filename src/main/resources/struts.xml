@@ -3,13 +3,23 @@
 <struts>
 	<package name="Before" extends="struts-default">
 
+		<action name="honorDetail" class="Action.HonorDetailAction">
+			<result name="success">/Before/company_honor.jsp</result>
+			<result name="fail">/Before/index.jsp</result>
+		</action>
+		<action name="honorArticle" class="Action.HonorListAction">
+			<result name="success">/Before/company_honor.jsp</result>
+			<result name="fail">/Before/index.jsp</result>
+		</action>
+
+
 		<action name="companyArticleDetail" class="Action.CompanyArticleDetail">
 			<result name="success">/Before/article.jsp</result>
-			<result name="fail">/Before/index.html</result>
+			<result name="fail">/Before/index.jsp</result>
 		</action>
 		<action name="companyArticle" class="Action.CompanyArticleListAction">
 			<result name="success">/Before/company_article.jsp</result>
-			<result name="fail">/Before/index.html</result>
+			<result name="fail">/Before/index.jsp</result>
 		</action>
 
 		<action name="login" class="Action.LoginAction">
@@ -86,6 +96,37 @@
 	
 	
 	<package name="Back" extends="struts-default">
+		<action name="company_honor_list" class="BackAction.company_honor.ListView">
+			<result name="success">/Back/company_honor.jsp</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+
+		<action name="company_honor_delete" class="BackAction.company_honor.delete">
+			<result name="success">/Back/success.jsp</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+
+		<action name="company_honor_add" class="BackAction.company_honor.add">
+			<result name="success">/Back/company_honor_add.jsp</result>
+			<result name="fail">/Back/company_honor_add.jsp</result>
+		</action>
+
+
+		<action name="company_article_list" class="BackAction.company_article.ListView">
+			<result name="success">/Back/company_article.jsp</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+
+		<action name="company_article_delete" class="BackAction.company_article.delete">
+			<result name="success">/Back/success.jsp</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+
+		<action name="company_article_add" class="BackAction.company_article.add">
+			<result name="success">/Back/company_article_add.jsp</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+
 		<action name="loginBackAction" class="BackAction.BackLoginAction">
 			<result name="success">/Back/main.jsp</result>
 			<result name="fail">/Back/loginBack.html</result>

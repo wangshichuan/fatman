@@ -34,7 +34,7 @@
 					class="brand">FastNet</a>
 				<div class="nav-collapse collapse navbar-responsive-collapse">
 					<ul class="nav">
-						<li><a>欢迎进入网上订餐，后台系统</a></li>
+						<li><a>欢迎进入 莽子火锅 后台系统</a></li>
 						
 
 					</ul>

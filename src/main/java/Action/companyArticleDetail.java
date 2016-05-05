@@ -19,10 +19,19 @@ public class CompanyArticleDetail {
     private CompanyArticleService articleService = new CompanyArticleServiceImpl();
 
 
+    int id=1;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String execute() {
         try {
             HttpServletRequest request = ServletActionContext.getRequest();
-            int id = request.getAttribute("id") == null ? 0 : (int) request.getAttribute("id");
             Article article = articleService.getArticleById(id);
             request.setAttribute("article", article);
             return "success";

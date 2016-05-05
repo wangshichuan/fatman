@@ -23,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <center> 欢迎进入订餐系统， 后台页面，如需操作，请登录</center>
+    <center> 欢迎进入莽子特色自助老火锅管理系统， 后台页面，如需操作，请登录</center>
   </body>
 </html>
