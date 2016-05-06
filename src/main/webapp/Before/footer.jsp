@@ -11,18 +11,22 @@
     <title></title>
 </head>
 <body>
-<div style="padding-top: 12%">
+<center>
 
-  <footer class="site-footer" style="align-content: center">
-    <div class="container">
+  <div style="padding-top: 12%">
 
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p class="copyright-text">莽子特色自助老火锅 &copy; 2015 我们只做最好</p>
+    <footer class="site-footer" style="align-content: center">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="copyright-text">莽子特色自助老火锅 &copy; 2015 我们只做最好</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-</div>
+    </footer>
+  </div>
+</center>
+
 </body>
 </html>

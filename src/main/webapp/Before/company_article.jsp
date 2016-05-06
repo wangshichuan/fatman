@@ -10,31 +10,45 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <c:import url="header.jsp"></c:import>
-
+<link rel="stylesheet" type="text/css" href="css/news.css">
 <body>
+
 <center>
+    <div class="article" align="center">
 
-    <div class="mainright">
-        <div class="article">
-            <h3>企业资讯<sub>COMPANY NEWS</sub></h3>
-            <ul>
-               <%--${test }--%>
-                <c:if test="${!empty articleList}">
-                    <c:forEach items="${articleList }" var="article" >
-                        <li>
-                            <a href="companyArticleDetail.action?id=${article.articleId }">
-                            ${article.title }
-                            </a>
-                            <span> ${article.date } </span>
-                        </li>
-                    </c:forEach>
-                    <s:else>没有文章</s:else>
-                </c:if>
+        <ul class="newslist">
+            <%--${test }--%>
+            <c:if test="${!empty articleList}">
+                <c:forEach items="${articleList }" var="article">
+                    <li>
+                        <a href="companyArticleDetail.action?id=${article.articleId }">
+                                ${article.title }
+                        </a>
+                        <span> ${article.date } </span>
+                    </li>
+                </c:forEach>
+                <s:else>没有文章</s:else>
+            </c:if>
 
+        </ul>
+        <div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="pagination pagination-right">
+                            <c:if test="${page>1}">
+                                <a href="companyArticle.action?page=${page-1}">上一页</a>
+                            </c:if>
+                            <a href="companyArticle.action?page=${page+1}">下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            </ul>
         </div>
     </div>
+
 </center>
+
 </body>
 </html>

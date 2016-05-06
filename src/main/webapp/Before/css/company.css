@@ -1,5 +1,5 @@
 .article{
-    float: left;width: 660px;padding: 10px 0 0 20px;font-size: 14px;line-height: 20px;color: #333333;
+    width: 660px;padding: 10px 0 0 20px;font-size: 14px;line-height: 20px;color: #333333;
 }
 
 /*h4 {padding-left:15px; line-height:2em; margin-bottom:0.5em; border-bottom:1px dotted #BAC6D8; color:#195A95; background:transparent url(images/dot.gif) no-repeat 5px 50%; }*/
@@ -35,4 +35,7 @@
 }
 .article DD A:visited {
     COLOR: #333
+}
+.article.h3{
+
 }

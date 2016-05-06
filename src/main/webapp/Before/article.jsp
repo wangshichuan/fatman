@@ -9,13 +9,34 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <c:import url="header.jsp"></c:import>
+<link rel="stylesheet" type="text/css" href="css/news.css">
 <body>
-<c:if test="${article !=null}">
-    <h2>
-            ${article.title }
-    </h2>
-    ${article.content }
-</c:if>
+<center>
+    <div class="main_content">
+        <div class="conwrap">
+            <div class="newshead"><h1>${article.title }</h1>
+
+                <p>发表日期：${article.date}&nbsp;&nbsp;&nbsp;&nbsp;浏览次数：51</p>
+            </div>
+            <div class="dbline"></div>
+            ${article.content }
+            <div class="prevnext">
+                <%--<a class="prev"--%>
+                   <%--href="http://www.cqqq.cn/qqzx-post-id-297.html">上一篇：齐齐火锅2016年清明节放假通知</a>--%>
+                <%--<a--%>
+                        <%--class="next" href="http://www.cqqq.cn/qqzx-post-id-301.html">下一篇：没有了</a>--%>
+            </div>
+        </div>
+    </div>
+</center>
+
+
+<%--<c:if test="${article !=null}">--%>
+<%--<h2>--%>
+<%--${article.title }--%>
+<%--</h2>--%>
+<%--${article.content }--%>
+<%--</c:if>--%>
 
 <c:import url="footer.jsp"></c:import>
 </body>

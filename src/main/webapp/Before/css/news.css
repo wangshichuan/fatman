@@ -1,0 +1,7 @@
+.newslist { width:737px; height:auto; overflow: hidden;margin:20px auto; }
+.newslist li { width:100%; height:36px; margin-top: 24px; background:#f2f2f2; line-height: 36px;text-indent: 42px; font-size:14px; }
+.newslist li a { color:#575757;text-decoration: none;display: block; width:80%;float:left; height:36px;line-height: 36px;background-image: url(../img/newsarrow.png);background-position:20px center;background-repeat:no-repeat; }
+.newslist li span { width:20%; float:left;display:block;height:36px;line-height: 36px;color:#575757; }
+/*.newslist li a:hover { background-image: url(../img/newsarrow_h.png); color:#700000;  }*/
+.main_content { width:851px;height:auto; overflow:hidden;background: #fff; }
+.topnews { width:737px;margin:0 auto;height:200px; border-bottom:1px dashed #e1e1e1; }

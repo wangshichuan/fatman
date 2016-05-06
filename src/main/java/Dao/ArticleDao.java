@@ -73,6 +73,8 @@ public class ArticleDao {
         String sql = "SELECT * from company_article where id=?";
         Article article = null;
         try {
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs != null) {
                 while (rs.next()) {

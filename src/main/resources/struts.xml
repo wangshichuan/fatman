@@ -2,6 +2,15 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="Before" extends="struts-default">
+		<action name="company_join_add" class="Action.CompanyJoinAddAction">
+			<result name="success">/Before/company_join.jsp</result>
+			<result name="fail">/Before/index.jsp</result>
+		</action>
+
+		<action name="company_join" class="Action.CompanyJoinAction">
+			<result name="success">/Before/company_join.jsp</result>
+			<result name="fail">/Before/index.jsp</result>
+		</action>
 
 		<action name="honorDetail" class="Action.HonorDetailAction">
 			<result name="success">/Before/company_honor.jsp</result>
@@ -93,9 +102,26 @@
 			<result name="fail" type="redirectAction">peoplecenter</result>
 		</action>
 	</package>
-	
-	
+
+	<!--company_join_list-->
 	<package name="Back" extends="struts-default">
+		<action name="company_join_update" class="BackAction.company_join.Edit">
+			<result name="success">/Back/company_join.jsp</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+		<action name="company_join_delete" class="BackAction.company_join.delete">
+			<result name="success">/Back/company_join.jsp</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+
+
+
+
+		<action name="company_join_list" class="BackAction.company_join.ListView">
+			<result name="success">/Back/company_join.jsp</result>
+			<result name="fail">/Back/main.jsp</result>
+		</action>
+
 		<action name="company_honor_list" class="BackAction.company_honor.ListView">
 			<result name="success">/Back/company_honor.jsp</result>
 			<result name="fail">/Back/main.jsp</result>

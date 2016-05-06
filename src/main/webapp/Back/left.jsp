@@ -128,7 +128,7 @@
                    data-parent="#accordion-403075" href="#company_join"><b>加盟连锁</b></a>
             </div>
             <div id="company_join" class="accordion-body collapse">
-                <div class="accordion-inner"><a href="moneyday.action" target="rightFrame">
+                <div class="accordion-inner"><a href="company_join_list.action" target="rightFrame">
                     &nbsp;&nbsp;&nbsp;&nbsp;查看</a></div>
                 <div class="accordion-inner"><a href="moneymonth.action" target="rightFrame">
                     &nbsp;&nbsp;&nbsp;&nbsp;2</a></div>

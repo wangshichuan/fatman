@@ -30,6 +30,9 @@
     <link rel="stylesheet" type="text/css" href="css/company.css">
     <script type="text/javascript" src="js/lxMove.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/boot-css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen"/>
 </head>
 <body>

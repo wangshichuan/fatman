@@ -25,6 +25,7 @@ public class CompanyArticleListAction {
             List<Article> articleList = companyArticleService.getListByPage(page, size, null);
             request.setAttribute("articleList", articleList);
 //            request.setAttribute("test", articleList);
+            request.setAttribute("page",page);
             return "success";
         } catch (Exception e) {
             return "fail";

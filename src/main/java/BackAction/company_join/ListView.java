@@ -1,32 +1,33 @@
-package BackAction.company_honor;
+package BackAction.company_join;
 
-import Model.Article;
+import Model.CompanyJoin;
 import Model.Honor;
-import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
-import service.CompanyHonorService;
-import service.impl.CompanyHonorServiceImpl;
+import service.CompanyJoinService;
+import service.impl.CompanyJoinServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by wangshichuan on 2016/5/4.
+ * Created by wangshichuan on 2016/5/6.
  */
-public class ListView extends ActionSupport {
-    CompanyHonorService honorService = new CompanyHonorServiceImpl();
+public class ListView {
+
     int page = 1;
     int size = 20;
+    CompanyJoinService joinService = new CompanyJoinServiceImpl();
 
     public String execute() {
         try {
             HttpServletRequest request = ServletActionContext.getRequest();
-            List<Honor> honorsList = honorService.getListByPage(page, size, null);
-            request.setAttribute("honorList", honorsList);
+            List<CompanyJoin> joinList = joinService.getList(page, size, null);
+            request.setAttribute("joinList", joinList);
             return "success";
         } catch (Exception e) {
             return "fail";
         }
+
     }
 
     public int getPage() {
